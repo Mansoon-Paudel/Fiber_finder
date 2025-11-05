@@ -20,21 +20,22 @@ def home(request):
             
             api_data = response.json()
             logger.info(f"API Response: {api_data}")
-            
-            return render(request, 'home.html', {
+
+            return render(request, 'index.html', {
                 'api': api_data,
                 'query': query
             })
             
         except requests.RequestException as e:
             logger.error(f"API Error: {str(e)}")
-            return render(request, 'home.html', {
+            return render(request, 'index.html', {
                 'api': "oops! There was an error",
                 'error': str(e)
             })
     
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
 
 #curl -X GET "https://api.api-ninjas.com/v1/nutrition?query=idli" \
  # -H "X-Api-Key: XQliKJR1UqkVJji/c4H78g==GIiS63GxZgByFL2i"
+#home
