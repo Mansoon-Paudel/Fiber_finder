@@ -53,10 +53,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'foodie.urls'
 
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR],  # root directory where index.html is located
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,6 +127,6 @@ STATIC_DIRS = [os.path.join(BASE_DIR, 'foodie/static/')]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-#home
+#home. templates
 
 
