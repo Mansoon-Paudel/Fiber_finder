@@ -20,7 +20,7 @@ def home(request):
             
             api_data = response.json()
             logger.info(f"API Response: {api_data}")
-
+            
             return render(request, 'index.html', {
                 'api': api_data,
                 'query': query
@@ -38,4 +38,3 @@ def home(request):
 
 #curl -X GET "https://api.api-ninjas.com/v1/nutrition?query=idli" \
  # -H "X-Api-Key: XQliKJR1UqkVJji/c4H78g==GIiS63GxZgByFL2i"
-#home
