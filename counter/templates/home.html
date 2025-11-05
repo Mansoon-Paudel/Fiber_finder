@@ -123,6 +123,45 @@
               {%endif%}
               {%endif%}
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.min.js" 
+            integrity="sha512-n/G+dROKbKL3GVngGWmWfwK0yPctjZQM752diVYnXZtD/48agpUKLIn0xDQL9ydZ91x6BiOmTIFwWjjFi2kEFg==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+  const data = {{ api.0|safe }};
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Carbohydrates', 'Cholesterol', 'Saturated fat', 'Total Fat', 'Fiber', 'Potassium(mg)','Sodium(mg)','Sugar'],
+      datasets: [{
+        label: 'Nutritional Values of {{api.0.name | capfirst}} per 100g',
+       data: [
+    {{ api.0.carbohydrates_total_g|default:0 }},
+    {{ api.0.cholesterol_mg|default:0 }},
+    {{ api.0.fat_saturated_g|default:0 }},
+    {{ api.0.fat_total_g|default:0 }},
+    {{ api.0.fiber_g|default:0 }},
+    {{ api.0.potassium_mg|default:0 }},
+    {{ api.0.sodium_mg|default:0 }},
+    {{ api.0.sugar_g|default:0 }}
+],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+ 
+            
 </body>
 
 </html>
