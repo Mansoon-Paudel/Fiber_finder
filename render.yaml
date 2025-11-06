@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: Fiber_finder
+    name: fiber-finder
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn foodie.wsgi"
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn Fiber_finder.wsgi:application --bind 0.0.0.0:$PORT

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-&tw%nry79&c5usu0g(-yid46gr@*4-j$ywcczq4j9-(!aki-_y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -128,5 +128,4 @@ STATIC_DIRS = [os.path.join(BASE_DIR, 'foodie/static/')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #home. templates
-
 
