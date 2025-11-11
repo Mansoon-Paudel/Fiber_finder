@@ -15,16 +15,20 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 
+import os
+from pathlib import Path
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Static files (CSS, JavaScript, Images)
+# --- STATIC & MEDIA CONFIG ---
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Folder collectstatic creates
+STATICFILES_DIRS = [
+    BASE_DIR / 'foodie' / 'static',     # Folder where your static/ images actually are
+]
 
-# Media files (uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
