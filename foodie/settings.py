@@ -29,6 +29,9 @@ SECRET_KEY = 'django-insecure-&tw%nry79&c5usu0g(-yid46gr@*4-j$ywcczq4j9-(!aki-_y
 DEBUG = True
 ALLOWED_HOSTS = ['fiber-finder.up.railway.app', '127.0.0.1', 'localhost']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://fiber-finder.up.railway.app',
+]
 
 # Application definition
 
